@@ -19,7 +19,6 @@ jobs:
         run: |
           set -ex
           got="$(script/sayhi)"
-          if [ "$got" != "his" ]; then
-            echo "::error ::wrong output expected 'hi' but got '$got'"
-            exit 1
+          if [ "$got" != "hi2" ]; then
+            echo "::error ::wrong output expected 'hi2' but got '$got'"
           fi
