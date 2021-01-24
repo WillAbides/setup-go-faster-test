@@ -23,3 +23,31 @@ jobs:
             echo "::error ::wrong output expected 'hi' but got '$got'"
             exit 1
           fi
+  test-tip:
+    name: test-tip
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-20.04
+          - ubuntu-18.04
+          - windows-2019
+          - macos-10.15
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v2
+      - uses: WillAbides/setup-go-faster@testing
+        with:
+          go-version: tip
+      - run: go version
+      - name: sayhi
+        run: |
+          set -ex
+          got="$(script/sayhi)"
+          if [ "$got" != "hi" ]; then
+            echo "::error ::wrong output expected 'hi' but got '$got'"
+            exit 1
+          fi
