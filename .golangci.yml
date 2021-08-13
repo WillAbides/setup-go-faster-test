@@ -10,15 +10,14 @@ issues:
         - goconst
 linters:
   enable:
-    - golint
     - gosec
-    - interfacer
     - unconvert
     - gocyclo
     - goconst
     - goimports
     - gocritic
     - gofumpt
+    - revive
 linters-settings:
   gocritic:
     enabled-tags:
