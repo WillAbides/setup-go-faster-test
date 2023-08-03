@@ -9,10 +9,10 @@ jobs:
       fail-fast: false
       matrix:
         os:
+          - ubuntu-22.04
           - ubuntu-20.04
-          - ubuntu-18.04
           - windows-2019
-          - macos-10.15    
+          - macos-11
     runs-on: ${{ matrix.os }}
     defaults:
       run:
@@ -40,17 +40,17 @@ jobs:
       fail-fast: false
       matrix:
         os:
+          - ubuntu-22.04
           - ubuntu-20.04
-          - ubuntu-18.04
           - windows-2019
-          - macos-10.15
+          - macos-11
     runs-on: ${{ matrix.os }}
     defaults:
       run:
         shell: bash
     steps:
       - uses: actions/checkout@v2
-      - uses: WillAbides/setup-go-faster@v1.6.0
+      - uses: WillAbides/setup-go-faster@v1.8.0
         with:
           go-version: tip
       - run: go version
