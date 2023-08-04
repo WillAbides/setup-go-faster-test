@@ -1,0 +1,17 @@
+name: speedrun-tip
+on:
+  workflow_dispatch:
+jobs:
+  setup-go-faster-tip:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-22.04
+          - windows-2022
+          - macos-11
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: WillAbides/setup-go-faster@v1.8.0
+        with:
+          go-version: tip
