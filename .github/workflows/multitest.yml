@@ -24,7 +24,7 @@ jobs:
         shell: bash
     steps:
       - if: matrix.action == 'setup-go-faster'
-        uses: WillAbides/setup-go-faster@v1.10.0
+        uses: WillAbides/setup-go-faster@v1.9.1
         with:
           go-version: ${{ matrix.go-version-spec }}
       - if: matrix.action == 'setup-go'
