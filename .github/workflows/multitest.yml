@@ -11,13 +11,16 @@ jobs:
         action:
           - setup-go-faster
           - setup-go
+        os:
+          - ubuntu-22.04
+          - windows-2022
         go-version-spec:
           - '1.21'
-          - '1.21.x'
-          - '1.21.0'
+#          - '1.21.x'
+#          - '1.21.0'
           - '1.20'
-          - '1.20.x'
-    runs-on: ubuntu-22.04
+#          - '1.20.x'
+    runs-on: ${{ matrix.os }}
     defaults:
       run:
         shell: bash
