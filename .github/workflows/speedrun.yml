@@ -1,6 +1,5 @@
 name: speedrun
 on:
-  push:
   workflow_dispatch:
 env:
   GO_VERSION: 1.21.0

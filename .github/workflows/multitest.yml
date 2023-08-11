@@ -17,18 +17,41 @@ jobs:
           - '1.21.0'
           - '1.20'
           - '1.20.x'
-          - '1.20.0'
     runs-on: ubuntu-22.04
     defaults:
       run:
         shell: bash
     steps:
       - if: matrix.action == 'setup-go-faster'
+        id: setup_go_faster
         uses: WillAbides/setup-go-faster@v1.9.1
         with:
           go-version: ${{ matrix.go-version-spec }}
+      - if: matrix.action == 'setup-go-faster'
+        name: outputs
+        run: |
+          echo '*********** go version ***********'
+          go version
+          echo '*********** outputs ***********'
+          echo '${{ toJson( steps.setup_go_faster.outputs ) }}' | jq .
+          echo '*********** env ************'
+          env
+          echo '*********** go env ***********'
+          go env
       - if: matrix.action == 'setup-go'
+        id: setup_go
         uses: actions/setup-go@v4
         with:
           go-version: ${{ matrix.go-version-spec }}
           cache: false
+      - if: matrix.action == 'setup-go'
+        name: outputs
+        run: |
+          echo '*********** go version ***********'
+          go version
+          echo '*********** outputs ***********'
+          echo '${{ toJson( steps.setup_go.outputs ) }}' | jq .
+          echo '*********** env ************'
+          env
+          echo '*********** go env ***********'
+          go env
