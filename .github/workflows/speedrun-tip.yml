@@ -12,6 +12,6 @@ jobs:
           - macos-11
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: WillAbides/setup-go-faster@v1
+      - uses: WillAbides/setup-go-faster@main
         with:
           go-version: tip

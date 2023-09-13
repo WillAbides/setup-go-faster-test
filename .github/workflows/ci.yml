@@ -19,7 +19,7 @@ jobs:
         shell: bash
     steps:
       - uses: actions/checkout@v3
-      - uses: WillAbides/setup-go-faster@imp
+      - uses: WillAbides/setup-go-faster@main
         with:
           go-version: 1.21
       - run: script/lint
