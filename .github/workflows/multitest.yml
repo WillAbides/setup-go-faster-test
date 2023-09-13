@@ -24,7 +24,7 @@ jobs:
     steps:
       - if: matrix.action == 'setup-go-faster'
         id: setup_go_faster
-        uses: WillAbides/setup-go-faster@main
+        uses: WillAbides/setup-go-faster@matcher
         with:
           go-version: ${{ matrix.go-version-spec }}
       - if: matrix.action == 'setup-go-faster'
