@@ -10,6 +10,6 @@ func TestNothing(t *testing.T) {
 	fmt.Println("ending test")
 }
 
-func TestFailure(t *testing.T) {
-	t.Errorf("This test should fail")
+func TestLogging(t *testing.T) {
+	t.Log("hello from TestLogging")
 }
