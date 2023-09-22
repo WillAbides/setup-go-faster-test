@@ -7,3 +7,9 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - run: go version
+      - uses: WillAbides/setup-go-faster@main
+        with:
+          go-version: 1.21rc4
+      - run: go version
+      - run:
+          GOTOOLCHAIN=go1.21.1 go version
