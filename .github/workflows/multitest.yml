@@ -8,7 +8,10 @@ jobs:
     steps:
       - name: latest goroot
         run: |
-          env | grep "GOROOT_1_" | sort | tail -1 | cut -d= -f2
+          GOROOT="$(env | grep "GOROOT_1_" | sort | tail -1 | cut -d= -f2)"
+          export GOROOT
+          go version
+          "$GOROOT"/bin/go version
       - run: ls -haltr "$RUNNER_TOOL_CACHE/go"
       - run: which -a go
       - run: /usr/bin/go version
