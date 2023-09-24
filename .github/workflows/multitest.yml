@@ -2,9 +2,12 @@ name: multi-test
 on:
   push:
   workflow_dispatch:
+defaults:
+  run:
+    shell: bash
 jobs:
   toolchain-test:
-    runs-on: ubuntu-22.04
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
       - name: run
