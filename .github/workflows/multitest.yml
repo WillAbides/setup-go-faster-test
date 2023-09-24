@@ -6,17 +6,18 @@ jobs:
   toolchain-test:
     runs-on: ubuntu-22.04
     steps:
-      - run: env | grep GO
+      - name: latest goroot
+        run: |
+          env | grep "GOROOT_1_" | sort | tail -1 | cut -d= -f2
       - run: ls -haltr "$RUNNER_TOOL_CACHE/go"
       - run: which -a go
       - run: /usr/bin/go version
-      - run: /bin/go version
       - run: ls -al /usr/bin/go
       - run: go version
-      - uses: actions/checkout@v3
-      - uses: WillAbides/setup-go-faster@v1.12.0
-        with:
-          go-version-file: go.mod
-      - run: go version
-      - run:
-          go version
+#      - uses: actions/checkout@v3
+#      - uses: WillAbides/setup-go-faster@v1.12.0
+#        with:
+#          go-version-file: go.mod
+#      - run: go version
+#      - run:
+#          go version
