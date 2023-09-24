@@ -6,6 +6,7 @@ jobs:
   toolchain-test:
     runs-on: ubuntu-22.04
     steps:
+      - run: env | grep GO
       - run: ls -haltr "$RUNNER_TOOL_CACHE/go"
       - run: which -a go
       - run: /usr/bin/go version
