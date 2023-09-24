@@ -8,6 +8,10 @@ jobs:
     steps:
       - run: ls -haltr "$RUNNER_TOOL_CACHE/go"
       - run: which -a go
+      - run: /usr/bin/go version
+      - run: /bin/go version
+      - run: ls -haltr /usr/bin
+      - run: ls -haltr /bin
       - run: go version
       - uses: actions/checkout@v3
       - uses: WillAbides/setup-go-faster@v1.12.0
