@@ -11,8 +11,7 @@ jobs:
       - run: which -a go
       - run: /usr/bin/go version
       - run: /bin/go version
-      - run: ls -al /usr/bin
-      - run: ls -al /bin
+      - run: ls -al /usr/bin/go
       - run: go version
       - uses: actions/checkout@v3
       - uses: WillAbides/setup-go-faster@v1.12.0
