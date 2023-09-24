@@ -6,6 +6,7 @@ jobs:
   toolchain-test:
     runs-on: ubuntu-22.04
     steps:
+      - run: ls -haltr "$RUNNER_TOOL_CACHE/go"
       - run: go version
       - uses: actions/checkout@v3
       - uses: WillAbides/setup-go-faster@v1.12.0
