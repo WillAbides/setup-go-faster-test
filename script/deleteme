@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+CDPATH="" cd -- "$(dirname -- "$0")/.."
+
+
+export GOROOT_1_20_X64=/opt/hostedtoolcache/go/1.20.8/x64
+export GOROOT_1_21_X64=/opt/hostedtoolcache/go/1.21.1/x64
+export GOROOT_1_19_X64=/opt/hostedtoolcache/go/1.19.13/x64
+
+env | grep "GOROOT_1_" | sort | tail -1 | cut -d= -f2
