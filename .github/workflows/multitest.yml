@@ -9,11 +9,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: run
         run: |
-          set -x
           GOROOT="$(env | grep "GOROOT_1_" | sort | tail -1 | cut -d= -f2)"
           export GOROOT
           "$GOROOT"/bin/go version
-          GOTOOLCHAIN=go1.21rc4 "$GOROOT"/bin/go version
 
 #      - run: ls -haltr "$RUNNER_TOOL_CACHE/go"
 #      - run: which -a go
